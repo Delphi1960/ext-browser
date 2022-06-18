@@ -1,21 +1,21 @@
-import { useState } from "react"
+import { useState } from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import { RecoilRoot } from 'recoil'
+import App from '~weather/app/App'
+import Bootstrap from '~weather/app/Bootstrap'
 
 function IndexPopup() {
-  const [data, setData] = useState("")
+  const [data, setData] = useState("");
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        padding: 16
-      }}>
-      <h1>
-        Welcome to your <a href="https://www.plasmo.com">Plasmo</a> Extension!
-      </h1>
-      <input onChange={(e) => setData(e.target.value)} value={data} />
-    </div>
-  )
+    <BrowserRouter>
+      <RecoilRoot>
+        <Bootstrap>
+          <App />
+        </Bootstrap>
+      </RecoilRoot>
+    </BrowserRouter>
+  );
 }
 
-export default IndexPopup
+export default IndexPopup;
